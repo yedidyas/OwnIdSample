@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from "react";
 import './loginForm.scss';
 import {useNavigate} from "react-router-dom";
-import {firebaseConnector} from "../../Services/firebaseConnector";
+import {firebaseConnector} from "../../services/firebaseConnector";
 import {toast} from "react-toastify";
 import OwnIdWidget from "../OwnIdWidget/OwnIdWidget";
-import {OwnIdWidgetTypes} from "../../Enums/ownIdWidgetType";
+import {OwnIdWidgetTypes} from "../../enums/ownIdWidgetType";
 
 function LoginForm() {
     const [email, setEmail] = useState('');

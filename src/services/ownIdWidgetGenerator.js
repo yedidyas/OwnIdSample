@@ -1,4 +1,4 @@
-import {OwnIdWidgetTypes} from "../Enums/ownIdWidgetType";
+import {OwnIdWidgetTypes} from "../enums/ownIdWidgetType";
 
 export const ownIdWidget = {
     generateWidgetByType

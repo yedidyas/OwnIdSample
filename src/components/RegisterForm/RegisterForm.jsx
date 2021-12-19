@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from "react";
 import './registerForm.scss';
 import {useNavigate} from 'react-router-dom'
-import {firebaseConnector} from "../../Services/firebaseConnector";
+import {firebaseConnector} from "../../services/firebaseConnector";
 import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import OwnIdWidget from "../OwnIdWidget/OwnIdWidget";
-import {OwnIdWidgetTypes} from "../../Enums/ownIdWidgetType";
+import {OwnIdWidgetTypes} from "../../enums/ownIdWidgetType";
 
 function RegisterForm() {
     const [email, setEmail] = useState('');

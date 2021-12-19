@@ -1,5 +1,5 @@
 import React, {useEffect} from "react";
-import {ownIdWidget} from "../../Services/ownIdWidgetGenerator";
+import {ownIdWidget} from "../../services/ownIdWidgetGenerator";
 
 function OwnIdWidget({type,container}) {
     useEffect(() => {

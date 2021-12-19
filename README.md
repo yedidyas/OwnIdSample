@@ -1,2 +1,2 @@
 # OwnIdSample
-For Demo Application [Click Here](http://localhost:3000/register).
+For Demo Application [Click Here](https://ownidsample.herokuapp.com/register).

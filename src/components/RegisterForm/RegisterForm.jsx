@@ -25,7 +25,7 @@ function RegisterForm() {
     return (
         <>
             <div className="nav-tabs">
-                <a className="nav-link active">Register</a>
+                <a href="www.nivnavick.com" className="nav-link active">Register</a>
             </div>
             <form className="registration-form" onSubmit={handleSubmit}>
                 <input type="email" id="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)}/>

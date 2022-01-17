@@ -23,7 +23,7 @@ function LoginForm() {
     return (
         <>
             <div className="nav-tabs">
-                <a href="" className="nav-link active">Login</a>
+                <a href="www.nivnavick.com" className="nav-link active">Login</a>
             </div>
             <form id="loginForm" className="login-form" onSubmit={handleSubmit}>
                 <input type="email" id="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)}/>

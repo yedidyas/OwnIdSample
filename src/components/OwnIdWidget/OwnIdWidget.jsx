@@ -4,6 +4,7 @@ import {ownIdWidget} from "../../services/ownIdWidgetGenerator";
 function OwnIdWidget({type, container}) {
     useEffect(() => {
         injectScript();
+        
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 

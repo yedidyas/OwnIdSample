@@ -1,8 +1,8 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import './registerForm.scss';
 import {useNavigate} from 'react-router-dom'
 import {firebaseConnector} from "../../services/firebaseConnector";
-import {ToastContainer, toast} from 'react-toastify';
+import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import OwnIdWidget from "../OwnIdWidget/OwnIdWidget";
 import {OwnIdWidgetTypes} from "../../enums/ownIdWidgetType";
@@ -25,7 +25,7 @@ function RegisterForm() {
     return (
         <>
             <div className="nav-tabs">
-                <a href="" className="nav-link active">Register</a>
+                <a className="nav-link active">Register</a>
             </div>
             <form className="registration-form" onSubmit={handleSubmit}>
                 <input type="email" id="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)}/>

@@ -1,11 +1,10 @@
 import './App.scss';
-import React, {useEffect} from "react";
+import React from "react";
 import RegisterForm from "./components/RegisterForm/RegisterForm";
 import LoginForm from "./components/LoginForm/LoginForm";
 import {
     Routes,
-    Route,
-    useNavigate
+    Route
 } from "react-router-dom";
 import NotFound from "./components/NotFound/NotFound";
 

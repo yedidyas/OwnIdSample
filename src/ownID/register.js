@@ -1,6 +1,6 @@
-export const registerScript = () => {
+export const registerScript = (loginIdField, passwordField) => {
     window.ownid('register', {
-        passwordField: document.getElementById('password'),
-        loginIdField: document.getElementById('email')
+        loginIdField: loginIdField,
+        passwordField: passwordField
     })
 }

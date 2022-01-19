@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useRef, useState} from "react";
 import './loginForm.scss';
 import {useNavigate} from "react-router-dom";
 import {firebaseConnector} from "../../services/firebaseConnector";
@@ -10,6 +10,9 @@ function LoginForm() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     let navigate = useNavigate();
+    const userIdField = useRef(null);
+    const passwordField = useRef(null);
+    const submitField = useRef(null);
 
     function handleSubmit(event) {
         firebaseConnector.signInFirebaseUser(email, password, () => {
@@ -26,11 +29,15 @@ function LoginForm() {
                 <a href="www.nivnavick.com" className="nav-link active">Login</a>
             </div>
             <form id="loginForm" className="login-form" onSubmit={handleSubmit}>
-                <input type="email" id="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)}/>
-                <input type="password" id="password" placeholder="Password"
+                <input ref={userIdField} type="email" id="email" placeholder="Email"
+                       onChange={(e) => setEmail(e.target.value)}/>
+                <input ref={passwordField} type="password" id="password" placeholder="Password"
                        onChange={(e) => setPassword(e.target.value)}/>
-                <button type="submit" id="submit">Login</button>
-                <OwnIdWidget type={OwnIdWidgetTypes.Login} container='ownid-login'/>
+                <button ref={submitField} type="submit" id="submit">Login</button>
+                <OwnIdWidget type={OwnIdWidgetTypes.Login}
+                             passwordField={passwordField}
+                             loginIdField={userIdField}
+                             submitButton={submitField}/>
             </form>
             <div className="custom-link" onClick={() => navigate('/register')}>
                 <div className="link-text">Don't have an account?</div>

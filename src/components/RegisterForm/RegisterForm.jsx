@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useRef, useState} from "react";
 import './registerForm.scss';
 import {useNavigate} from 'react-router-dom'
 import {firebaseConnector} from "../../services/firebaseConnector";
@@ -10,6 +10,9 @@ import {OwnIdWidgetTypes} from "../../enums/ownIdWidgetType";
 function RegisterForm() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const userIdField = useRef(null);
+    const passwordField = useRef(null);
+    const submitField = useRef(null);
     let navigate = useNavigate();
 
     function handleSubmit(event) {
@@ -28,11 +31,15 @@ function RegisterForm() {
                 <a href="www.nivnavick.com" className="nav-link active">Register</a>
             </div>
             <form className="registration-form" onSubmit={handleSubmit}>
-                <input type="email" id="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)}/>
-                <input type="password" id="password" placeholder="Password"
+                <input ref={userIdField} type="email" id="email" placeholder="Email"
+                       onChange={(e) => setEmail(e.target.value)}/>
+                <input ref={passwordField} type="password" id="password" placeholder="Password"
                        onChange={(e) => setPassword(e.target.value)}/>
-                <button type="submit">Register</button>
-                <OwnIdWidget type={OwnIdWidgetTypes.Register} container='ownid-login'/>
+                <button ref={submitField} type="submit">Register</button>
+                <OwnIdWidget type={OwnIdWidgetTypes.Register}
+                             passwordField={passwordField}
+                             loginIdField={userIdField}
+                             submitButton={submitField}/>
             </form>
             <div className="custom-link" onClick={() => navigate('/login')}>
                 <div className="link-text">Already have an account?</div>

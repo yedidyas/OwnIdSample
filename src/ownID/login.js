@@ -1,8 +1,11 @@
-export const loginScript = () => {
+export const loginScript = (loginIdField,passwordField,submitButton,callback) => {
     window.ownid('login', {
-        loginIdField: document.getElementById('email'),
-        passwordField: document.getElementById('password'),
-        submitButton: document.getElementById('submit'),
+        loginIdField: loginIdField,
+        passwordField: passwordField,
+        submitButton: submitButton,
+        onLogin: () => {
+            console.log('asdad');
+        },
         onSuccess: () => {
             console.log('asdad');
         }

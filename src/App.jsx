@@ -7,10 +7,12 @@ import {
     Route
 } from "react-router-dom";
 import NotFound from "./components/NotFound/NotFound";
+import { OwnIDInit } from '@ownid/react';
 
 function App() {
     return (
         <div className="App">
+            <OwnIDInit config={{ serverUrl: 'https://d1yk6gcngrc0og.server.dev.ownid.com/ownid'  }}/>
             <Routes>
                 <Route
                     path='/'
